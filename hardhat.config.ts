@@ -1,12 +1,10 @@
-import { config as dotEnvConfig } from "dotenv";
-dotEnvConfig();
-
-import { HardhatUserConfig } from "hardhat/types";
-
+import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
-import "@nomiclabs/hardhat-etherscan";
+import { config as dotEnvConfig } from "dotenv";
+import { HardhatUserConfig } from "hardhat/types";
 import "solidity-coverage";
+dotEnvConfig();
 
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
 const RINKEBY_PRIVATE_KEY =
@@ -17,7 +15,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   solidity: {
-    compilers: [{ version: "0.7.6", settings: {} }],
+    compilers: [{ version: "0.8.0", settings: {} }],
   },
   networks: {
     hardhat: {},
